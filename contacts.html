@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Cage - Contact</title>
+  <link rel="stylesheet" href="./CSS/contacts.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>🎵</span> SOUND CAGE</div>
+     <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="songs.html">Songs</a></li>
+        <li><a href="album.html">Albums</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Email: support@soundcage.com</p>
+      <p>Phone: +234 814 508 5957</p>
+      <p>Address: Lagos, Nigeria</p>
+      <div><img src="./images/Music.png" width="300"></div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Sound Cage. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+     const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      alert("Thank you, " + name + "! Your message has been sent.");
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+</body>
+</html>

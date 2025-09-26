@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Cage - Songs</title>
+  <link rel="stylesheet" href="./CSS/songs.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>🎵</span> SOUND CAGE</div>
+     <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="navMenu">
+      <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="songs.html">Songs</a></li>
+        <li><a href="album.html">Albums</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Search -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search for songs...">
+  </div>
+
+  <!-- Songs list -->
+  <section class="songs">
+    <div class="song-item">
+      <img src="https://via.placeholder.com/60" alt="cover">
+      <div class="song-details">
+        <h3>New Vibes</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="song-actions">
+        <button onclick="playSong('song1.mp3', 'New Vibes', 'Artist Name', 'https://via.placeholder.com/60')">Play</button>
+        <button>Download</button>
+      </div>
+    </div>
+    <div class="song-item">
+      <img src="https://via.placeholder.com/60" alt="cover">
+      <div class="song-details">
+        <h3>Fly High</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="song-actions">
+        <button onclick="playSong('song2.mp3', 'Fly High', 'Artist Name', 'https://via.placeholder.com/60')">Play</button>
+        <button>Download</button>
+      </div>
+    </div>
+    <div class="song-item">
+      <img src="https://via.placeholder.com/60" alt="cover">
+      <div class="song-details">
+        <h3>Late Night</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="song-actions">
+        <button onclick="playSong('song3.mp3', 'Late Night', 'Artist Name', 'https://via.placeholder.com/60')">Play</button>
+        <button>Download</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Player -->
+  <div class="player" id="musicPlayer">
+    <div class="player-info">
+      <img src="https://via.placeholder.com/50" alt="cover" id="playerCover">
+      <div>
+        <h4 id="playerTitle">No song playing</h4>
+        <p id="playerArtist"></p>
+      </div>
+    </div>
+    <div class="controls">
+      <button onclick="togglePlay()">Play</button>
+    </div>
+    <audio id="audio"></audio>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Sound Cage. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+     const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+    const audio = document.getElementById('audio');
+    const playerTitle = document.getElementById('playerTitle');
+    const playerArtist = document.getElementById('playerArtist');
+    const playerCover = document.getElementById('playerCover');
+    const playButton = document.querySelector('.controls button');
+
+    function playSong(src, title, artist, cover) {
+      audio.src = src;
+      playerTitle.textContent = title;
+      playerArtist.textContent = artist;
+      playerCover.src = cover;
+      audio.play();
+      playButton.textContent = "Pause";
+    }
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "Pause";
+      } else {
+        audio.pause();
+        playButton.textContent = "Play";
+      }
+    }
+  </script>
+</body>
+</html>

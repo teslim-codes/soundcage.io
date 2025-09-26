@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Cage - Artists</title>
+  <link rel="stylesheet" href="./CSS/artists.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>🎵</span> SOUND CAGE</div>
+     <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="songs.html">Songs</a></li>
+        <li><a href="album.html">Albums</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Search -->
+  <div class="search-bar">
+    <input type="text" id="artistSearch" placeholder="Search for artists..." onkeyup="filterArtists()">
+  </div>
+
+  <!-- Artists Grid -->
+  <section class="artists">
+    <h2>Featured Artists</h2>
+    <div class="grid" id="artistGrid">
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/120" alt="Tom">
+        <h3>Tom</h3>
+        <p>Hip-Hop Artist</p>
+      </div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/120" alt="Emma">
+        <h3>Emma</h3>
+        <p>Pop Singer</p>
+      </div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/120" alt="Sara">
+        <h3>Sara</h3>
+        <p>Afrobeat Artist</p>
+      </div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/120" alt="Ava">
+        <h3>Ava</h3>
+        <p>RnB Singer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Sound Cage. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for Filtering -->
+  <script>
+     const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+    function filterArtists() {
+      const input = document.getElementById("artistSearch").value.toLowerCase();
+      const cards = document.getElementById("artistGrid").getElementsByClassName("artist-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        const name = cards[i].getElementsByTagName("h3")[0].textContent.toLowerCase();
+        if (name.includes(input)) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

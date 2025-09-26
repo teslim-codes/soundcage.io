@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./CSS/home.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>🎵</span> SOUND CAGE</div>
+     <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="songs.html">Songs</a></li>
+        <li><a href="album.html">Albums</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Discover New Music</h1>
+      <p>Stream and download the latest songs, albums, and playlists.</p>
+      <a href="#" class="btn">Listen Now</a>
+    </div>
+    <img src="./images/Music.png" width="" alt="Music Hero">
+  </section>
+
+  <!-- Featured Songs -->
+  <section>
+    <h2>Featured Songs</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>New Vibes</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>Fly High</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>Late Night</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>Good Vibes</h3>
+        <p>Artist Name</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Albums -->
+  <section>
+    <h2>New Albums</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>My Life</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>No Limits</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>Heartbreak</h3>
+        <p>Artist Name</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x200" alt="">
+        <h3>New Horizons</h3>
+        <p>Artist Name</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Most Popular -->
+  <section class="popular">
+    <h2>Most Popular</h2>
+    <ul>
+      <li>1. New Vibes <span>Artist Name</span></li>
+      <li>2. Fly High <span>Artist Name</span></li>
+      <li>3. Late Night <span>Artist Name</span></li>
+      <li>4. Good Vibes <span>Artist Name</span></li>
+      <li>5. My Life <span>Artist Name</span></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Sound Cage. All rights reserved.
+  </footer>
+<script>
+   const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+</script>
+</body>
+</html>
